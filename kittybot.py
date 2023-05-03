@@ -24,7 +24,7 @@ updater = Updater(token=secret_token)
 
 URL_CATS = 'https://api.thecatapi.com/v1/images/search'
 URL_DOGS = 'https://api.thedogapi.com/v1/images/search'
-URL_WEATHER = 'https://wttr.in'
+URL_WEATHER = 'https://wttr.in/Королёв'
 BOT_CONFIG = {
     'intents': {
         'hello': {
@@ -106,7 +106,7 @@ def wake_up(update, context):
             )
     context.bot.send_message(
         chat_id=chat.id,
-        text='Рад приветствовать Вас, {}!'.format(name),
+        text='Мяу-мяу!'.format(name),
         reply_markup=buttons
         )
 
@@ -153,7 +153,7 @@ def show_cats_image(update, context):
     button = ReplyKeyboardMarkup([['/newcat', '/menu']], resize_keyboard=True)
     context.bot.send_message(
         chat_id=chat.id,
-        text='{}. Посмотри, какого котика я тебе нашёл! Показать еще?'.format(name),
+        text='Посмотри на одного из моих кошачьих друзей! Показать еще?'.format(name),
         reply_markup=button
     )
 
@@ -166,7 +166,7 @@ def show_dogs_image(update, context):
     button = ReplyKeyboardMarkup([['/newdog', '/menu']], resize_keyboard=True)
     context.bot.send_message(
         chat_id=chat.id,
-        text='{}. Посмотри, какого пёсика я тебе нашёл! Показать еще?'.format(name),
+        text='Посмотри на одного из моих собачьих друзей! Показать еще?'.format(name),
         reply_markup=button
     )
 
